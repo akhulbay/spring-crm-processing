@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="main_layout.html">
+
+<div layout:fragment="siteContent">
+    <div class="col-12">
+        <div th:switch="${requests}">
+            <div th:case="null">No Requests Found!</div>
+            <div th:case="*">
+                <div style="margin-top: 15px; display: grid; gap: 20px; grid-template-columns: 1fr 1fr">
+                    <div class="" th:each="request : ${requests}"
+                         style="box-shadow: 0 0 5px; padding: 10px; border-radius: 5px">
+                        <div th:switch="${request.handled}">
+                            <h5 th:case="true">Заявка от <strong th:text="${request.username}"></strong></h5>
+                            <h5 th:case="false"><strong style="color: red">*Новая</strong> Заявка от <strong
+                                    th:text="${request.username}"></strong></h5>
+                        </div>
+                        <div class="mb-2">
+                            <span th:text="'Курс: ' + ${request.courseName}"></span> <br>
+                            <span th:text="${request.comment}"></span>
+                        </div>
+                        <div class="d-flex">
+                            <span style="font-weight: bold" th:text="'Тел: ' + ${request.phone}"></span>
+                            <a style="margin-left: 20px; text-decoration: none" th:text="Подробнее"
+                               th:href="@{'/details/' + ${request.id}}"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

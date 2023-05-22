@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="main_layout.html">
+
+<div layout:fragment="siteContent">
+    <div class="col-8 mx-auto">
+        <form method="post" th:action="@{/create-request}">
+            <div class="mb-3">
+                <label for="fullName" class="form-label">ФИО:</label>
+                <input type="text" class="form-control" id="fullName" placeholder="ФИО:" th:name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="course" class="form-label">Курс:</label>
+                <select id="course" class="form-select" th:name="courseName" required>
+                    <option>Java Standard Edition</option>
+                    <option>Web Technologies</option>
+                    <option>Python Programming Language</option>
+                    <option>Java Pro</option>
+                    <option>UX/UI Design</option>
+                    <option>Django Framework</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Телефон: </label>
+                <input type="text" class="form-control" id="phone" placeholder="+7(7__)_______" th:name="phone" required>
+            </div>
+            <div class="mb-3">
+                <label for="comment" class="form-label">Комментарии:</label>
+                <textarea class="form-control" id="comment" rows="6" placeholder="Комментарии"
+                          th:name="comment"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Добавить заявку</button>
+        </form>
+    </div>
+</div>
+</html>

@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid pb-2 pt-2" style="background-color: #0b7361">
+        <a class="navbar-brand" th:href="@{/}" style="color: white">CRM Система</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/}" style="color: lightgray">Все заявки</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/unprocessed}" style="color: lightgray">Новые заявки</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/processed}" style="color: lightgray">Обработанные заявки</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/create-request}" style="color: lightgray">+Добавить заявку</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
